@@ -9,14 +9,17 @@ public class Finalize {
 	
 	@Override
 	public void finalize() {
-		if (!finalStatus) {
+		//if (!finalStatus) {
 			System.out.println("no final");
-		}
+		//}
 	}
 	
 	public static void main(String[] args) {
-		new Finalize();
-		
+		Finalize f = new Finalize();
+		for (int a = 0; a < 10000; a++) {
+			byte[] bytes = new byte[1024 * 100];
+		}
+		f = null;
 		System.gc();
 	}
 }
